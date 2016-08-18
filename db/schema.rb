@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818015332) do
+ActiveRecord::Schema.define(version: 20160818153559) do
+
+  create_table "leaves", force: :cascade do |t|
+    t.datetime "leave_time_start"
+    t.datetime "leave_time_end"
+    t.string   "leave_class"
+    t.string   "leave_subject"
+    t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["user_id"], name: "index_leaves_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
