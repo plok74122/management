@@ -1,0 +1,6 @@
+<h1> 請假細節 </h1>
+<h3>請假類別： <%= @leafe.leave_class %> </h3>
+<h3>起迄時間： 自<%= @leafe.leave_time_start.to_s(:short) %>至<%= @leafe.leave_time_end.to_s(:short) %>  </h3>
+<h3><%= distance_of_time_in_words(@leafe.leave_time_start, @leafe.leave_time_end, include_seconds: true) %></h3>
+
+<%= link_to "Back Index", leaves_path, class: "btn btn-warning" %>

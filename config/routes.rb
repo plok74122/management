@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  resources :managements, only: [:index, :show]
+  resources :managements, only: [:index]
+
+  resources :leaves
 
   root to: "managements#index"
 end

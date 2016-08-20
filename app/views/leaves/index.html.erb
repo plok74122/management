@@ -1,0 +1,33 @@
+<h1> 請假資訊： </h1>
+<table class="table">
+  <tr>
+    <td class="text-center">
+      <strong>假別</strong>
+    </td>
+    <td class="text-center">
+      <strong>休假時間</strong>
+    </td>
+    <td class="text-left">
+      <strong>申請時間</strong>
+    </td>
+    <td class="text-center">
+      <strong>編輯</strong>
+    </td>
+  </tr>
+  <% @leaves.each do |leave| %>
+    <tr>
+      <td class="text-center">
+        <%= link_to leave.leave_class, leafe_path(leave) %>
+      </td>
+      <td class="text-center">
+        <%= "#{leave.leave_time_start.to_s(:short)}  至  #{leave.leave_time_end.to_s(:short)}" %>
+      </td>
+      <td class="text-left">
+        <%= leave.updated_at.localtime.to_s(:short) %>
+      </td>
+      <td class="text-center">
+        <%= link_to "編輯", edit_leafe_path(leave), class: "btn btn-info" %>
+      </td>
+    </tr>
+  <% end %>
+</table>

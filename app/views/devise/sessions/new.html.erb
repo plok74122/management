@@ -2,7 +2,7 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label "帳號" %><br />
+    <%= f.label :email, "帳號" %><br />
     <%= f.text_field :email, autofocus: true %>
   </div>
 
