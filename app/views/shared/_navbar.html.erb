@@ -6,7 +6,7 @@
         <% if user_signed_in? %>
           <%= "#{current_user.email}，你好!" %>
         <% else %>
-          <%= 公司名字 %>
+          <%= "公司名字" %>
         <% end %>
       </a>
     </div>
@@ -26,8 +26,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">日報系統 <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><%= link_to "日報註記", new_daily_path %></li>
-            <li><%= link_to "日報查詢", daily_index_path %></li>
+            <li><%= link_to "日報註記", new_daily_report_path %></li>
+            <li><%= link_to "日報查詢", daily_reports_path %></li>
           </ul>
         </li>
       </ul>

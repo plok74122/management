@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :managements, only: [:index]
 
   resources :leaves
-  resources :daily, :controller => "daily_reports"
+  resources :daily_reports
 
   root to: "managements#index"
 end
