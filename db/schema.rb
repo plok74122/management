@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818153559) do
+ActiveRecord::Schema.define(version: 20160820091010) do
+
+  create_table "daily_reports", force: :cascade do |t|
+    t.string   "content"
+    t.date     "daily"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_daily_reports_on_user_id"
+  end
 
   create_table "leaves", force: :cascade do |t|
     t.datetime "leave_time_start"
